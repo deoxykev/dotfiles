@@ -1,0 +1,41 @@
+! remove Caps Lock
+clear lock
+!remove Lock = Caps_Lock
+!remove Shift = Caps_Lock
+! add Mode_switch
+keycode 66 = NoSymbol NoSymbol
+keycode 66 = Mode_switch
+
+keysym h = h H Left NoSymbol NoSymbol NoSymbol
+keysym j = j J Down NoSymbol NoSymbol NoSymbol
+keysym k = k K Up NoSymbol NoSymbol NoSymbol
+keysym l = l L Right NoSymbol lstroke Lstroke
+keysym slash = slash question division
+keysym a = a A Super_R approximate
+keysym b = b B Greek_beta Greek_BETA
+keysym c = c C copyright checkmark 
+keysym d = d D Greek_delta Greek_DELTA
+keysym e = e E Greek_SIGMA Cyrillic_ie 
+keysym f = f F function
+keysym g = g G Greek_gamma Greek_GAMMA
+keysym t = t T trademark Cyrillic_te 
+keysym o = o O Cyrillic_a Greek_OMEGA  
+keysym p = p P Greek_pi Cyrillic_er 
+keysym x = x X enfilledcircbullet Cyrillic_ha 
+keysym y = y Y Greek_psi Cyrillic_u 
+keysym z = z Z Greek_zeta Greek_ZETA
+keysym i = i I infinity integral 
+keysym m = m M Greek_mu
+keysym n = n N Greek_nu notequal
+keysym r = r R Greek_rho
+keysym s = s S circle heart 
+keysym t = t T trademark therefore
+keysym u = u U Greek_upsilon union
+keysym r = r R guillemotright
+keysym 1 = 1 exclam onesuperior
+keysym 2 = 2 at twosuperior
+keysym 3 = 3 numbersign threesuperior
+keysym minus = minus underscore emdash
+keysym equal = equal plus notequal plusminus 
+keysym period = period greater greaterthanequal
+keysym comma = comma less lessthanequal

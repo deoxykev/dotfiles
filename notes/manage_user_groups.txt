@@ -1,0 +1,47 @@
+# important files
+/etc/passwd (list of usrs)
+/etc/shadow (encrypted pw of users)
+/etc/group (list of groups)
+/etc/gshadow (encrypted pw of groups)
+
+adduser
+>> /etc/adduser.conf
+
+/etc/skel file will populate new user with .profile template (default shell)
+
+# add sudo user:
+adduser <user> <group>
+adduser <user> sudo
+
+# change password
+passwd
+
+# change full name
+chfn
+
+# change shell
+chsh
+
+# change age (password expiration date)
+chage -l <user> <time>
+
+# disable account (lock)
+passwd -l <user>
+
+# enable account (unlock)
+passwd -u <user>
+
+#########################
+
+# adding/deleting groups
+addgroup <group> 
+delgroup <group>
+
+# change group password
+gpasswdgroup <group>
+
+# delete group password
+passwd -r <group>
+
+# note, use newgrp when working on a directory owned by a group 
+# that you aren't a part of in "id"

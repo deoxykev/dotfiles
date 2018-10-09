@@ -1,0 +1,2 @@
+# reverse dns lookup
+dig 5.251.92.216.in-addr.arpa PTR +short

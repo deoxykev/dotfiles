@@ -1,0 +1,4 @@
+# look at mx records (which mail provider is this?)
+nslookup; set type=mx; gmail.com
+
+

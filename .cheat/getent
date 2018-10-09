@@ -1,0 +1,2 @@
+# return info from user data base (get env info)
+getent passwd <user>
