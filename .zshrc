@@ -157,3 +157,4 @@ alias v='xclip -o'
 alias fzfc='fzf | xclip -i'
 alias killer='f(){ ps -a | fzf | awk '\''{print $1}'\'' | xargs kill $@ }; f' #quick kill with fzf, takes args
 alias config='/usr/bin/git --git-dir=${HOME}/.cfg/ --work-tree=${HOME}'
+alias notes='cd ${HOME}/notes && ${HOME}/notes/.fuz.sh'
