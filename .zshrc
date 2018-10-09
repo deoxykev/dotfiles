@@ -7,7 +7,7 @@ if [[ $USER == "root" ]]; then
   export ZSH="/root/.oh-my-zsh"
   ZSH_THEME="bira"
 else 
-  export ZSH="/home/k/.oh-my-zsh"
+  export ZSH="${HOME}/.oh-my-zsh"
   ZSH_THEME="lukerandall"
 fi
 
@@ -121,10 +121,10 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-alias rvpn='bash /home/k/scripts/resetvpn.sh'
-alias dvpn='bash /home/k/scripts/downvpn.sh'
-alias cvpn='cvpn(){bash /home/k/scripts/changevpn.sh $(ls /etc/wireguard/ | cut -f1 -d'.' | fzf) }; cvpn'
-alias hvpn='bash /home/k/scripts/resetvpnhome.sh'
+alias rvpn='bash ${HOME}/scripts/resetvpn.sh'
+alias dvpn='bash ${HOME}/scripts/downvpn.sh'
+alias cvpn='cvpn(){bash ${HOME}/scripts/changevpn.sh $(ls /etc/wireguard/ | cut -f1 -d'.' | fzf) }; cvpn'
+alias hvpn='bash ${HOME}/scripts/resetvpnhome.sh'
 # creates a backup of a file, then edits in vim
 alias bvim='bvim(){cp "${1}" "${1}.bak" && vim "${1}"}; bvim' # backup file before vim
 alias pg='ping 1.1.1.1 -c1 && curl ipinfo.io || iwconfig' # internet test
@@ -136,24 +136,24 @@ alias root='sudo su'
 alias k='su k'
 alias sus='sudo pm-suspend'
 alias bc='bc -q'
-alias fsoc="cat /home/k/scripts/fsoc.ascii | nms -cas -f red"
+alias fsoc="cat ${HOME}/scripts/fsoc.ascii | nms -cas -f red"
 alias update='sudo apt update && sudo apt upgrade -y'
 alias pick='deepin-picker 2>1' # color picker
 alias rootupdate='[[ $USER == "root" ]] && zsh /root/.cpdotfiles.sh || echo "run as root."'
-alias cleandownloads='bash /home/k/scripts/cleandownloads.sh'
+alias cleandownloads='bash ${HOME}/scripts/cleandownloads.sh'
 alias ga='alias | grep -v 'git' | grep -v 'cd' | grep -v 'ls' | fzf | cut -f2 -d"=" | xargs zsh -c' # get aliases
 alias src='source ${HOME}/.zshrc' # sources .zshrc
 alias peco='peco --initial-filter=Regexp' 
 alias rdns='f(){dig +short "${1}.in-addr.arpa." PTR }; f' # reverse DNS lookup 
-alias cheatpush='scp /home/k/.cheat/* kalivm:/root/.cheat/'
-alias cheatpull='scp -r kalivm:"/root/.cheat/*" /home/k/.cheat'
-alias zshpush='scp /home/k/.zshrc kalivm:/root/'
-alias zshpull='scp kalivm:/root/.zshrc /home/k/'
-alias notepush='scp /home/k/notes/* kalivm:/root/notes/'
-alias notepull='scp kalivm:"/root/notes/*" /home/k/notes/'
+alias cheatpush='scp ${HOME}/.cheat/* kalivm:/root/.cheat/'
+alias cheatpull='scp -r kalivm:"/root/.cheat/*" ${HOME}/.cheat'
+alias zshpush='scp ${HOME}/.zshrc kalivm:/root/'
+alias zshpull='scp kalivm:/root/.zshrc ${HOME}/'
+alias notepush='scp ${HOME}/notes/* kalivm:/root/notes/'
+alias notepull='scp kalivm:"/root/notes/*" ${HOME}/notes/'
 alias cheatcp='f(){ cheat $@ | fzf | xclip -i}; f' #requires x11 forwarding
 alias c='xclip -i'
 alias v='xclip -o'
 alias fzfc='fzf | xclip -i'
 alias killer='f(){ ps -a | fzf | awk '\''{print $1}'\'' | xargs kill $@ }; f' #quick kill with fzf, takes args
-alias config='/usr/bin/git --git-dir=/home/k/.cfg/ --work-tree=/home/k'
+alias config='/usr/bin/git --git-dir=${HOME}/.cfg/ --work-tree=${HOME}'
