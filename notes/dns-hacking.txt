@@ -8,8 +8,8 @@ dig @1.1.1.1 <domain>
 zone file: txt file on server hosting domain that contains diff resource records (RR)
 start of authority (SOA): authoritative nameserver for domain (like ns1.google.com for google.com)
 
-mx records: mailserver \\ nslookup; set type=mx; pham.design
-ns records: nameserver \\ nslookup; set type=ns; pham.design
+mx records: mailserver \\ nslookup; set type=mx; google.com
+ns records: nameserver \\ nslookup; set type=ns; google.com 
 
 
 A Records- Maps an IP Address to a hostname.For e.g. 74.125.236.80 for google.com.
@@ -25,3 +25,5 @@ master server will give slave nameservers it's zone info. this is called zone tr
 Usually it will only give the zone file to nameserver subdomains, but if not configured right will give that info to anybody.
 Zone Transfer (AXFR): enumeration, leaks info about subdomains if improperly configured
 fierce -dns google.com -wordlist dictionary.txt
+
+beware wildcard subdomains (*.google.com), this is the case if the dns returns the same ip for different subdomains, only way around this is to bruteforce
