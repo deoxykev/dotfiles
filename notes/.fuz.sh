@@ -13,7 +13,7 @@ main() {
 
 select_file() {
   given_file="$1"
-  fzf --preview="bat --color=always --theme=zenburn -l bash {}" --preview-window=right:70%:wrap --query="$given_file"
+  fzf --preview="bat -n --color=always --theme=zenburn -l bash {}" --preview-window=right:70%:wrap --query="$given_file"
 }
 
 main ""
