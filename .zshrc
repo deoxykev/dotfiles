@@ -129,7 +129,7 @@ alias hvpn='bash ${HOME}/scripts/resetvpnhome.sh'
 alias bvim='bvim(){cp "${1}" "${1}.bak" && vim "${1}"}; bvim' # backup file before vim
 alias pg='ping 1.1.1.1 -c1 && curl ipinfo.io || iwconfig' # internet test
 alias st='st(){curl ipinfo.io && speedtest --server $(speedtest --list | grep ")" | fzf | cut -f1 -d")" ) }; st'
-alias cat='bat --plain'
+alias cat='bat -n --theme=zenburn'
 alias xi='bash "${HOME}/.xinitrc"' # caps lock binding reset
 alias tm='tmux new-session -A -s main'
 alias root='sudo su'
