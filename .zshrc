@@ -135,9 +135,9 @@ alias getiip='ifconfig | grep "inet " -B1 | grep '\'': flags'\'' | cut -f1 -d'\'
 # creates a backup of a file, then edits in vim
 alias bvim='bvim(){cp "${1}" "${1}.bak" && vim "${1}"}; bvim' # backup file before vim
 # edit zshrc related
-alias ga='alias | grep -v 'git' | grep -v 'cd' | grep -v 'ls' | fzf  | cut -f2 -d"=" | xargs zsh -c' # get aliases
+alias getalias='alias | grep -v 'git' | grep -v 'cd' | grep -v 'ls' | fzf  | cut -f2 -d"=" | xargs zsh -c' # get aliases
 alias src='source ${HOME}/.zshrc' # sources .zshrc
-alias zshrc='vim ${HOME}/.zshrc && source ${HOME}/.zshrc'
+alias vzsh='vim ${HOME}/.zshrc && source ${HOME}/.zshrc'
 #program shortcuts
 alias cat='bat -n --theme=zenburn'
 alias bc='bc -q'
@@ -154,7 +154,7 @@ alias fsoc="cat ${HOME}/scripts/fsoc.ascii | nms -cas -f red"
 alias rootupdate='[[ $USER == "root" ]] && zsh /root/.cpdotfiles.sh || echo "run as root."'
 alias cleandownloads='bash ${HOME}/scripts/cleandownloads.sh'
 alias cheatcp='f(){ cheat $@ | fzf | xclip -i}; f' #requires x11 forwarding
-alias c='xclip -i && xclip -o | xsel -b'
+alias c='xclip -i && xclip -o | tr -d '\''\n'\'' | xsel -b'
 alias v='xclip -o'
 alias killer='f(){ ps -a | fzf  | awk '\''{print $1}'\'' | xargs kill $@ }; f' #quick kill with fzf, takes args
 
@@ -167,5 +167,5 @@ alias cpull='/usr/bin/git --git-dir=${HOME}/.cfg/ --work-tree=${HOME} pull'
 alias notes='cd ${HOME}/notes && ${HOME}/notes/.fuz.sh'
 alias fzf='fzf --bind '\''ctrl-o:execute(bat --theme=zenburn {}),ctrl-y:execute-silent(echo {} | xclip -i )+abort'\'' ' #ctrl y to copy to clipboard
 alias fzfc='fzf  | xclip -i'
-alias fzfm='f(){ man $1 | fzf  --preview "man $1 | grep --color=always -C$(expr `tput lines` / 3) -- {} " --preview-window=up:70% --reverse -m --inline-info }; f'
+alias manf='f(){ man $1 | fzf  --preview "man $1 | grep --color=always -C$(expr `tput lines` / 3) -- {} " --preview-window=up:70% --reverse -m --inline-info }; f'
 
