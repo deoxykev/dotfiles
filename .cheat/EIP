@@ -1,0 +1,2 @@
+# EIP register: Instruction Pointer
+points to the current instruction the processor is reading
