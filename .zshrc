@@ -160,7 +160,7 @@ alias killer='f(){ ps -a | fzf  | awk '\''{print $1}'\'' | xargs kill $@ }; f' #
 
 # sync files
 alias config='/usr/bin/git --git-dir=${HOME}/.cfg/ --work-tree=${HOME}'
-alias cpush='/usr/bin/git --git-dir=${HOME}/.cfg/ --work-tree=${HOME} commit -a --allow-empty-message -m "$(uptime -p)" ; /usr/bin/git --git-dir=${HOME}/.cfg/ --work-tree=${HOME} push'
+alias cpush='/usr/bin/git --git-dir=${HOME}/.cfg/ --work-tree=${HOME} commit -a --allow-empty-message -m "$(fortune)" ; /usr/bin/git --git-dir=${HOME}/.cfg/ --work-tree=${HOME} push'
 alias cpull='/usr/bin/git --git-dir=${HOME}/.cfg/ --work-tree=${HOME} pull && source ${HOME}/.zshrc' 
 
 #fzf
