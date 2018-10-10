@@ -56,7 +56,7 @@ fzf-cd-widget() {
     zle redisplay
     return 0
   fi
-  cd "$dir"
+  cd "$dir" && ls
   local ret=$?
   zle fzf-redraw-prompt
   typeset -f zle-line-init >/dev/null && zle zle-line-init

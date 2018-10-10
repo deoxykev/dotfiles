@@ -121,42 +121,47 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# wirguard vpn related
 alias rvpn='bash ${HOME}/scripts/resetvpn.sh'
 alias dvpn='bash ${HOME}/scripts/downvpn.sh'
 alias cvpn='cvpn(){bash ${HOME}/scripts/changevpn.sh $(ls /etc/wireguard/ | cut -f1 -d'.' | fzf) }; cvpn'
 alias hvpn='bash ${HOME}/scripts/resetvpnhome.sh'
-# creates a backup of a file, then edits in vim
-alias bvim='bvim(){cp "${1}" "${1}.bak" && vim "${1}"}; bvim' # backup file before vim
+# networking related
 alias pg='ping 1.1.1.1 -c1 && curl ipinfo.io || iwconfig' # internet test
 alias st='st(){curl ipinfo.io && speedtest --server $(speedtest --list | grep ")" | fzf | cut -f1 -d")" ) }; st'
+alias rdns='f(){dig +short "${1}.in-addr.arpa." PTR }; f' # reverse DNS lookup 
+# creates a backup of a file, then edits in vim
+alias bvim='bvim(){cp "${1}" "${1}.bak" && vim "${1}"}; bvim' # backup file before vim
+# edit zshrc related
+alias ga='alias | grep -v 'git' | grep -v 'cd' | grep -v 'ls' | fzf  | cut -f2 -d"=" | xargs zsh -c' # get aliases
+alias src='source ${HOME}/.zshrc' # sources .zshrc
+alias zshrc='vim ${HOME}/.zshrc && source ${HOME}/.zshrc'
+#program shortcuts
 alias cat='bat -n --theme=zenburn'
+alias bc='bc -q'
 alias xi='bash "${HOME}/.xinitrc"' # caps lock binding reset
 alias tm='tmux new-session -A -s main'
 alias root='sudo su'
+alias pick='deepin-picker 2>1' # color picker
 alias k='su k'
 alias sus='sudo pm-suspend'
-alias bc='bc -q'
-alias fsoc="cat ${HOME}/scripts/fsoc.ascii | nms -cas -f red"
 alias update='sudo apt update && sudo apt upgrade -y'
-alias pick='deepin-picker 2>1' # color picker
+alias peco='peco --initial-filter=Regexp' 
+# misc
+alias fsoc="cat ${HOME}/scripts/fsoc.ascii | nms -cas -f red"
 alias rootupdate='[[ $USER == "root" ]] && zsh /root/.cpdotfiles.sh || echo "run as root."'
 alias cleandownloads='bash ${HOME}/scripts/cleandownloads.sh'
-alias ga='alias | grep -v 'git' | grep -v 'cd' | grep -v 'ls' | fzf | cut -f2 -d"=" | xargs zsh -c' # get aliases
-alias src='source ${HOME}/.zshrc' # sources .zshrc
-alias peco='peco --initial-filter=Regexp' 
-alias rdns='f(){dig +short "${1}.in-addr.arpa." PTR }; f' # reverse DNS lookup 
-alias cheatpush='scp ${HOME}/.cheat/* kalivm:/root/.cheat/'
-alias cheatpull='scp -r kalivm:"/root/.cheat/*" ${HOME}/.cheat'
-alias zshpush='scp ${HOME}/.zshrc kalivm:/root/'
-alias zshpull='scp kalivm:/root/.zshrc ${HOME}/'
-alias notepush='scp ${HOME}/notes/* kalivm:/root/notes/'
-alias notepull='scp kalivm:"/root/notes/*" ${HOME}/notes/'
 alias cheatcp='f(){ cheat $@ | fzf | xclip -i}; f' #requires x11 forwarding
 alias c='xclip -i'
 alias v='xclip -o'
-alias fzfc='fzf | xclip -i'
-alias killer='f(){ ps -a | fzf | awk '\''{print $1}'\'' | xargs kill $@ }; f' #quick kill with fzf, takes args
+alias killer='f(){ ps -a | fzf  | awk '\''{print $1}'\'' | xargs kill $@ }; f' #quick kill with fzf, takes args
+
+# sync files
 alias config='/usr/bin/git --git-dir=${HOME}/.cfg/ --work-tree=${HOME}'
 alias cpush='/usr/bin/git --git-dir=${HOME}/.cfg/ --work-tree=${HOME} commit -a --allow-empty-message -m "" ; /usr/bin/git --git-dir=${HOME}/.cfg/ --work-tree=${HOME} push'
 alias cpull='/usr/bin/git --git-dir=${HOME}/.cfg/ --work-tree=${HOME} pull' 
+
+#fzf
 alias notes='cd ${HOME}/notes && ${HOME}/notes/.fuz.sh'
+alias fzf='fzf --bind '\''ctrl-o:execute(bat --theme=zenburn {}),ctrl-y:execute-silent(echo {} | xclip -i )+abort'\'' ' #ctrl y to copy to clipboard
+alias fzfc='fzf  | xclip -i'

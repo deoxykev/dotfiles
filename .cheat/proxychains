@@ -1,0 +1,7 @@
+# https://0x00sec.org/t/how-do-those-hackers-tools-work-proxychains/426
+
+# route traffic through proxies
+proxychains <program> <program parameters>
+
+# edit proxy config (set dynamic_chain for multiple proxies)
+/etc/proxychains.conf
