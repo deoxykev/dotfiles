@@ -130,6 +130,8 @@ alias hvpn='bash ${HOME}/scripts/resetvpnhome.sh'
 alias pg='ping 1.1.1.1 -c1 && curl ipinfo.io || iwconfig' # internet test
 alias st='st(){curl ipinfo.io && speedtest --server $(speedtest --list | grep ")" | fzf | cut -f1 -d")" ) }; st'
 alias rdns='f(){dig +short "${1}.in-addr.arpa." PTR }; f' # reverse DNS lookup 
+alias getip='dig +short myip.opendns.com @resolver1.opendns.com' # get external ip addr, use with | c for copy
+alias getiip='ifconfig | grep "inet " -B1 | grep '\'': flags'\'' | cut -f1 -d'\'':'\'' | fzf --height=7 --reverse | xargs -I {} bash -c '\''ifconfig -a | grep -A1 {} | grep -e "inet "'\'' | xargs echo | awk '\''{print $2}'\'' '
 # creates a backup of a file, then edits in vim
 alias bvim='bvim(){cp "${1}" "${1}.bak" && vim "${1}"}; bvim' # backup file before vim
 # edit zshrc related
@@ -152,7 +154,7 @@ alias fsoc="cat ${HOME}/scripts/fsoc.ascii | nms -cas -f red"
 alias rootupdate='[[ $USER == "root" ]] && zsh /root/.cpdotfiles.sh || echo "run as root."'
 alias cleandownloads='bash ${HOME}/scripts/cleandownloads.sh'
 alias cheatcp='f(){ cheat $@ | fzf | xclip -i}; f' #requires x11 forwarding
-alias c='xclip -i'
+alias c='xclip -i && xclip -o | xsel -b'
 alias v='xclip -o'
 alias killer='f(){ ps -a | fzf  | awk '\''{print $1}'\'' | xargs kill $@ }; f' #quick kill with fzf, takes args
 
@@ -165,3 +167,5 @@ alias cpull='/usr/bin/git --git-dir=${HOME}/.cfg/ --work-tree=${HOME} pull'
 alias notes='cd ${HOME}/notes && ${HOME}/notes/.fuz.sh'
 alias fzf='fzf --bind '\''ctrl-o:execute(bat --theme=zenburn {}),ctrl-y:execute-silent(echo {} | xclip -i )+abort'\'' ' #ctrl y to copy to clipboard
 alias fzfc='fzf  | xclip -i'
+alias fzfm='f(){ man $1 | fzf  --preview "man $1 | grep --color=always -C$(expr `tput lines` / 3) -- {} " --preview-window=up:70% --reverse -m --inline-info }; f'
+
