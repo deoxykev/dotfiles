@@ -154,6 +154,8 @@ alias fsoc="cat ${HOME}/scripts/fsoc.ascii | nms -cas -f red"
 alias rootupdate='[[ $USER == "root" ]] && zsh /root/.cpdotfiles.sh || echo "run as root."'
 alias cleandownloads='bash ${HOME}/scripts/cleandownloads.sh'
 alias cheatcp='f(){ cheat $@ | fzf | xclip -i}; f'
+alias cheat='f(){ cheat $@ | bat -n --theme=zenburn --color=always -l bash }; f'
+alias chee='f(){ /usr/local/bin/cheat -e $@ }; f'
 alias c='xclip -i && xclip -o | tr -d '\''\n'\'' | xsel -b'
 alias v='xclip -o' #requires x11 forwarding for paste thru ssh
 alias killer='f(){ ps -a | fzf  | awk '\''{print $1}'\'' | xargs kill $@ }; f' #quick kill with fzf, takes args
