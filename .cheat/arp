@@ -1,0 +1,5 @@
+# ethernet addresss arp table
+arp -a
+
+# delete eth addr arp table entry
+arp -d myhost

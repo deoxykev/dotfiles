@@ -1,0 +1,60 @@
+======================================
+NETWORK CONFIGURATION FILES: ///////
+======================================
+All the network related configuration files on a Linux platform.
+======================================
+/etc
+This directory contains most of the basic Linux system-configuration Files.
+======================================
+/etc/sysconfig
+Contains important system configuration files that are created and maintained by
+various services (including iptables, samba, and most networking services).
+======================================
+/etc/sysconfig/network
+Network configuration file used by the system during the boot process.
+======================================
+/etc/sysconfig/network-scripts
+Configuration files that are run during boot process related to setting up of your
+network.
+======================================
+/etc/xinetd.d
+Contains a set of files, each of which defines a network service that the xinetd
+daemon listens for on a particular port.
+======================================
+/etc/syslogd.conf
+The configuration file for the syslogd daemon. syslogd is the daemon that takes care
+of logging (writing to disk) messages coming from other programs to the system.
+======================================
+/etc/resolv.conf
+Host name resolver configuration file. This configures Linux so that it knows which
+DNS server will be resolving domain names into IP addresses.
+======================================
+/etc/hosts
+Locally resolve node names to IP addresses. This informs Linux of local systems on
+the network which are not handled by the DNS server.
+======================================
+/etc/nsswitch.conf
+System Databases and Name Service Switch configuration file. Looks up /etc/hosts
+first, if host not found then it would query DNS server as defined by
+/etc/resolv.conf
+======================================
+/var
+Contains variable data like system logging files, mail and printer spool directories,
+and transient and temporary files.
+======================================
+/var/log
+Log files from the system and various programs/services, especially login
+(/var/log/wtmp, which logs all logins and logouts into the system) and syslog
+(/var/log/messages, where all kernel and system program message are usually
+stored).
+======================================
+/var/log/messages System logs. The first place you should look at if your system is
+in trouble.
+======================================
+/var/log/utmp
+Active user sessions. This is a data file and as such it can not be viewed normally.
+======================================
+/var/log/wtmp
+Log of all users who have logged into and out of the system. The last command can be
+used to access a human readable form of this file.
+====================================== 

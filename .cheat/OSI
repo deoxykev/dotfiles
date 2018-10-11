@@ -1,0 +1,71 @@
+======================================
+OSI MODEL:
+======================================
+Upper Layers
+Layers 7 through 4 comprise the upper layers of the OSI protocol stack. They are more
+geared to the type of application than the lower layers, which are designed to move
+packets, no matter what they contain, from one place to another.
+ 
+Application Layer 7
+This top layer defines the language and syntax that programs use to communicate with
+other programs. The application layer represents the purpose of communicating in
+the first place. For example, a program in a client workstation uses commands to
+request data from a program in the server. Common functions at this layer are
+opening, closing, reading and writing files, transferring files and e-mail
+messages, executing remote jobs and obtaining directory information about network
+resources.
+ 
+Presentation Layer 6
+When data are transmitted between different types of computer systems, the
+presentation layer negotiates and manages the way data are represented and encoded.
+For example, it provides a common denominator between ASCII and EBCDIC machines as
+well as between different floating point and binary formats. Sun's XDR and OSI's
+ASN.1 are two protocols used for this purpose. This layer is also used for
+encryption and decryption.
+ 
+Session Layer 5
+Provides coordination of the communications in an orderly manner. It determines
+one-way or two-way communications and manages the dialog between both parties; for
+example, making sure that the previous request has been fulfilled before the next
+one is sent. It also marks significant parts of the transmitted data with
+checkpoints to allow for fast recovery in the event of a connection failure.
+In practice, this layer is often not used or services within this layer are sometimes
+incorporated into the transport layer.
+ 
+Transport Layer 4
+This layer is responsible for overall end-to-end validity and integrity of the
+transmission. The lower layers may drop packets, but the transport layer performs a
+sequence check on the data and ensures that if a 12MB file is sent, the full 12MB
+is received.
+"OSI transport services" include layers 1 through 4, collectively responsible for
+delivering a complete message or file from sending to receiving station without
+error.
+ 
+Lower Layers
+Layers 3 through 1 are responsible for moving packets from the sending station to the
+receiving station.
+ 
+Network Layer 3
+The network layer establishes the route between the sender and receiver across
+switching points, which are typically routers. The most ubiquitous example of this
+layer is the IP protocol in TCP/IP (see TCP/IP). IPX, SNA and AppleTalk are other
+examples of routable protocols, which means that they include a network address and
+a station address in their addressing system. This layer is also the switching
+function of the dial-up telephone system. If all stations are contained within a
+single network segment, then the routing capability in this layer is not required.
+See layer 3 switch.
+ 
+Data Link Layer 2
+The data link is responsible for node to node validity and integrity of the
+transmission. The transmitted bits are divided into frames; for example, an
+Ethernet, Token Ring or FDDI frame in local area networks (LANs). Frame relay and
+ATM are also at Layer 2. Layers 1 and 2 are required for every type of
+communications. For more on this layer, see data link protocol.
+ 
+Physical Layer 1
+The physical layer is responsible for passing bits onto and receiving them from the
+connecting medium. This layer has no understanding of the meaning of the bits, but
+deals with the electrical and mechanical characteristics of the signals and
+signaling methods. For example, it comprises the RTS and CTS signals in an RS-232
+environment, as well as TDM and FDM techniques for multiplexing data on a line.
+SONET also provides layer 1 capability. 

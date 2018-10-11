@@ -7,6 +7,20 @@ b some-method, break some-method
 # Intel syntax
 set dis intel
 
+# examine memory
+x/o # octal
+x/x # hex
+x/u # unsigned decimal
+x/t # binary
+
+x/b # byte
+x/h # halfword (2 bytes)
+x/w # word (4 bytes)
+x/g # giant (8 bytes)
+
+x/c # look up byte in ascii table
+x/s # format & display string of char data
+
 # run the program
 r, run
 
