@@ -117,3 +117,4 @@ if ! shopt -oq posix; then
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+alias cpterm='echo "export TERM=$TERM; stty rows $(tput lines) cols $(tput cols)" | xsel -b && [[ $(ps -p $$ | grep bash) ]] && echo Terminal info copied to clipboard. || echo "WARNING: not running as bash." '

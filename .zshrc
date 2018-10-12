@@ -15,42 +15,22 @@ fi
 export BROWSER="$(which firefox)"
 export EDITOR="vi"
 export VISUAL="vi"
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-#ZSH_THEME="lukerandall"
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+# set colored man pages
+#export LESS_TERMCAP_mb=$'\e[1;32m'
+#export LESS_TERMCAP_md=$'\e[1;32m'
+#export LESS_TERMCAP_me=$'\e[0m'
+#export LESS_TERMCAP_se=$'\e[0m'
+#export LESS_TERMCAP_so=$'\e[01;33m'
+#export LESS_TERMCAP_ue=$'\e[0m'
+#export LESS_TERMCAP_us=$'\e[1;4;31m'
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+ HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+ COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -63,7 +43,7 @@ export VISUAL="vi"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+ HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -170,4 +150,5 @@ alias notes='cd ${HOME}/notes && ${HOME}/notes/.fuz.sh'
 alias fzf='fzf --bind '\''ctrl-o:execute(bat --theme=zenburn {}),ctrl-y:execute-silent(echo {} | xclip -i )+abort'\'' ' #ctrl y to copy to clipboard
 alias fzfc='fzf  | xclip -i'
 alias manf='f(){ man $1 | fzf  --preview "man $1 | grep --color=always -C$(expr `tput lines` / 3) -- {} " --preview-window=up:70% --reverse -m --inline-info }; f'
+alias cpterm='echo "export TERM=$TERM; stty rows $(tput lines) cols $(tput cols)" | xsel -b && [[ $(ps -p $$ | grep bash) ]] && echo Terminal info copied to clipboard. || echo "WARNING: not running as bash." '
 
