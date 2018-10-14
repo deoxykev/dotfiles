@@ -1,3 +1,5 @@
 # EAX register: accumulator
 x86 general purpose register.
+•  Stores the return value of a function and as a 
+   special register for certain calculations
 

@@ -1,2 +1,5 @@
 # EBX register: Base register
 x86 general purpose register.
+  • non-volatile general-purpose register. It has no specific uses, 
+    but is often set to a commonly used value 
+    (such as 0) throughout a function to speed up calculations. 

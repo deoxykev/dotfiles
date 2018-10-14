@@ -1,1 +1,3 @@
 # EBP register: Base Pointer
+  • Keeps track of where the stack is at the beginning of a function
+    (can be either frame pointer or general purpose register, based on compile opts)

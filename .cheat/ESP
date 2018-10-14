@@ -1,2 +1,3 @@
 # ESP register: Stack pointer
 x86 general purpose register
+  • points to the top of the stack (lower virtual address, b/c stack grows downwards towards heap)

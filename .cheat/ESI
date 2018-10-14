@@ -1,2 +1,5 @@
 # ESI register: Source Index
-
+  • esi is a non-volatile general-purpose register that is often used as a pointer.
+    Specifically, for "rep-" class instructions, which require a source and a
+    destination for data, esi points to the "source". esi often stores data
+    that is used throughout a function because it doesn't change. 

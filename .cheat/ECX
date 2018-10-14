@@ -1,2 +1,4 @@
 # ECX register: Counter
 x86 general purpose register.
+• ecx is a volatile general-purpose register that is occasionally
+  used as a function parameter or as a loop counter. 

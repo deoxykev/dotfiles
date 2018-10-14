@@ -1,1 +1,3 @@
 # EDI register: Destination Index
+  edi is a non-volatile general-purpose register that is often used as a pointer.
+  It is similar to esi, except that it is generally used as a destination for data. 

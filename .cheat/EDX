@@ -1,2 +1,5 @@
 # EDX register: Data
 x86 general purpose register.
+  Volatile general-purpose register that is occasionally used
+  as a function parameter. Like ecx, edx is used for "__fastcall" functions.
+  Generally used for storing short-term variables within a function. 
