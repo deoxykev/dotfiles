@@ -22,7 +22,8 @@
     statusline_inactive_separator = "arrow"
     buffer_index_type = 4
     enable_tabline_filetype_icon = true
-    enable_statusline_display_mode = false
+    enable_statusline_display_mode = true
+    bootstrap_before = "vimwiki#before"
 
 # Enable autocomplete layer
 [[layers]]
@@ -31,7 +32,14 @@ auto-completion-return-key-behavior = "complete"
 auto-completion-tab-key-behavior = "smart"
 
 [[layers]]
-name = 'shell'
 name = 'fzf'
 default_position = 'top'
 default_height = 30
+
+[[custom_plugins]]
+    name = "vimwiki/vimwiki"
+    merged = 0
+
+[[custom_plugins]]
+    name = "suan/vim-instant-markdown"
+    merged = 0

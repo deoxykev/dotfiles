@@ -11,7 +11,11 @@
     • EIP should land on "BBBB" 
 
 # Discover bad chars
-1. !mona cmp
+1. !mona config -set workingfolder C:\logs\%p
+2. !mona bytearray -cpb "\x00\x0a" # gen byte array without bad chars
+3. !mona cmp -f c:\logs\program\bytearray.bin -a <start_addr>
+4. verify by sending a byte array without the bad chars
+5. generate shellcode without badchars
     • msfvenom ... -b '\x00\x0a'
                        ^------^
                            » exclude bad chars in shellcode generator
@@ -31,7 +35,8 @@
 
 # NOP sled
     ("\x90"*16)
-    (\x83\xec\x10) 
+    (\x83\xec\x10) (sub eax,0x10)
+      • uses less buffer space
   msfvenom ... -n 16
 
 # shellcode

