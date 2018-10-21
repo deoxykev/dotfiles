@@ -3,7 +3,7 @@
 * [OSINT](OSINT)                         - Useful resources
 
 ## Post Exploitation
-* [Reverse Shells](Reverse-Shells)                - Windows / Linux 
+* [Reverse Shells](Reverse-Shells.md)          - Windows / Linux 
 
 ## Networking
 * [Reverse SSH tunnels](Reverse-SSH-tunnels)           - NAT bypass & local routing to external host

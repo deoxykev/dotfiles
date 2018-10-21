@@ -114,10 +114,10 @@ alias getip='dig +short myip.opendns.com @resolver1.opendns.com' # get external 
 alias getiip='ifconfig | grep "inet " -B1 | grep '\'': flags'\'' | cut -f1 -d'\'':'\'' | fzf --height=7 --reverse | xargs -I {} bash -c '\''ifconfig -a | grep -A1 {} | grep -e "inet "'\'' | xargs echo | awk '\''{print $2}'\'' '
 # creates a backup of a file, then edits in vim
 alias bvim='bvim(){cp "${1}" "${1}.bak" && vim "${1}"}; bvim' # backup file before vim
-# edit zshrc related
+# zshrc related
 alias getalias='alias | grep -v 'git' | grep -v 'cd' | grep -v 'ls' | fzf  | cut -f2 -d"=" | xargs zsh -c' # get aliases
 alias src='source ${HOME}/.zshrc' # sources .zshrc
-alias vzsh='vim ${HOME}/.zshrc && source ${HOME}/.zshrc'
+alias zshrc='vim ${HOME}/.zshrc && source ${HOME}/.zshrc && echo ".zshrc sourced"'
 #program shortcuts
 alias cat='bat -n --theme=zenburn'
 alias bc='bc -q'
@@ -129,6 +129,9 @@ alias k='su k'
 alias sus='sudo pm-suspend'
 alias update='sudo apt update && sudo apt upgrade -y'
 alias peco='peco --initial-filter=Regexp' 
+alias p2='python2 -q'
+alias p3='python3 -q'
+
 # misc
 alias fsoc="cat ${HOME}/scripts/fsoc.ascii | nms -cas -f red"
 alias rootupdate='[[ $USER == "root" ]] && zsh /root/.cpdotfiles.sh || echo "run as root."'
