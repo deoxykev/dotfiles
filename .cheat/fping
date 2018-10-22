@@ -1,0 +1,5 @@
+# ping sweep with CIDR, output only ip 
+fping -g 192.168.1.1/24 -Q1 -a
+
+# ping sweep from txt file
+fping < hosts.txt
