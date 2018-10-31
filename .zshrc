@@ -131,6 +131,7 @@ alias update='sudo apt update && sudo apt upgrade -y'
 alias peco='peco --initial-filter=Regexp' 
 alias p2='python2 -q'
 alias p3='python3 -q'
+alias movie='vlc -f $(find /mnt/gdrive/tdrive/movies/ -type f -iname "*.mkv" | fzf )'
 
 # misc
 alias fsoc="cat ${HOME}/scripts/fsoc.ascii | nms -cas -f red"
@@ -155,6 +156,5 @@ alias fzfc='fzf  | xclip -i'
 alias manf='f(){ man $1 | fzf  --preview "man $1 | grep --color=always -C$(expr `tput lines` / 3) -- {} " --preview-window=up:70% --reverse -m --inline-info }; f'
 alias cpterm='echo "export TERM=$TERM; stty rows $(tput lines) cols $(tput cols)" | xsel -b && [[ $(ps -p $$ | grep bash) ]] && echo Terminal info copied to clipboard. || echo "WARNING: not running as bash." '
 
-
 # oscp
-alias enumerateip='f(){ curl -sL $1 | egrep -o "([a-zA-Z]*\.){1,4}${1}" | sort -u | parallel ping -c1 -W1 {} 2>/dev/null | grep ttl | egrep -o "([0-9]{1,3}\.){3}[0-9]{1,3}" | sort -u };f' 
+alias enumerateip='f(){ curl -sL ${1}${2} | egrep -o "([a-zA-Z]*\.){1,4}${1}" | sort -u | parallel ping -c1 -W1 {} 2>/dev/null | grep ttl | egrep -o "([0-9]{1,3}\.){3}[0-9]{1,3}" | sort -u };f' 
