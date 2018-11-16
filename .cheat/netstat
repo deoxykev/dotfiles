@@ -1,7 +1,7 @@
 # WARNING ! netstat is deprecated. Look below.
 
 # To view which users/processes are listening to which ports:
-sudo netstat -lnptu
+sudo netstat -tulpn
 
 # To view routing table (use -n flag to disable DNS lookups):
 netstat -r
