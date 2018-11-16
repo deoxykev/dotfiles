@@ -52,6 +52,7 @@ https://resources.infosecinstitute.com/dns-hacking/#gref
 
 
     fierce -dns google.com -wordlist dictionary.txt
+    host -l <domain> <ns1.domain>
 
 * Beware wildcard subdomains (*.google.com)
   * this is the case if the dns returns the same ip for different subdomains
@@ -62,4 +63,13 @@ https://resources.infosecinstitute.com/dns-hacking/#gref
     gobuster -m dns -i -u <domain.com> -w /path/to/wordlist
     
     host $name.domain.com | grep "has address" | cut -d" " -f1,4
+
+### Reverse DNS query (reverse DNS lookup) (only works with PTR records)
+
+    seq 1 255 | parallel host 10.10.10.{}  \| grep "domain name pointer"
+    
+### Other Tools
+    
+    dnsrecon -d zonetransfer.me 
+    dnsenum zonetransfer.me
 
