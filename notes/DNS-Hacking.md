@@ -15,6 +15,7 @@ https://resources.infosecinstitute.com/dns-hacking/#gref
 ### Zone File
 * txt file on server hosting domain that contains different resource records (RR)
 * start of authority (SOA): authoritative nameserver for domain (like ns1.google.com for google.com)
+* 
 
 ### MX Records (mail server)
 * This basically tells us which server is responsible for receiving mails sent to that domain name.
@@ -55,4 +56,10 @@ https://resources.infosecinstitute.com/dns-hacking/#gref
 * Beware wildcard subdomains (*.google.com)
   * this is the case if the dns returns the same ip for different subdomains
   * only way around this is to bruteforce with `dirbuster` or `gobuster`
+
+### Bruteforcing hostnames  (forward dns lookup)
+
+    gobuster -m dns -i -u <domain.com> -w /path/to/wordlist
+    
+    host $name.domain.com | grep "has address" | cut -d" " -f1,4
 

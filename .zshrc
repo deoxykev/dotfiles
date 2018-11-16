@@ -143,6 +143,7 @@ alias chee='f(){ /usr/local/bin/cheat -e $@ }; f'
 alias c='xclip -i && xclip -o | tr -d '\''\n'\'' | xsel -b'
 alias v='xclip -o' #requires x11 forwarding for paste thru ssh
 alias killer='f(){ ps -a | fzf  | awk '\''{print $1}'\'' | xargs kill $@ }; f' #quick kill with fzf, takes args
+alias rot13='f(){ echo "$@" |  tr "b-za-aB-ZA-A" "a-zA-Z" }; f'
 
 # sync files
 alias config='/usr/bin/git --git-dir=${HOME}/.cfg/ --work-tree=${HOME}'
@@ -158,3 +159,7 @@ alias cpterm='echo "export TERM=$TERM; stty rows $(tput lines) cols $(tput cols)
 
 # oscp
 alias enumerateip='f(){ curl -sL ${1}${2} | egrep -o "([a-zA-Z]*\.){1,4}${1}" | sort -u | parallel ping -c1 -W1 {} 2>/dev/null | grep ttl | egrep -o "([0-9]{1,3}\.){3}[0-9]{1,3}" | sort -u };f' 
+
+#misc
+alias btconnect='bluetoothctl <<<"connect 64:1C:B0:1B:06:CB"'
+alias btdisconnect='bluetoothctl <<<"disconnect 64:1C:B0:1B:06:CB"'

@@ -1,2 +1,9 @@
 # find dns info quickly
 host <domain>
+
+# get nameservers
+host -t ns <domain>
+
+# get email servers
+host -t mx <domain>
+

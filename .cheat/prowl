@@ -1,0 +1,3 @@
+# get names, emails and job title from yahoo/bing/linkedin
+prowl -c "google" -e "<fn><ln>@google.com" -a
+

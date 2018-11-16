@@ -1,0 +1,2 @@
+# scan a bunch of hosts
+parallel nc -zv -W1 192.168.{1}.{2} 443 ::: <(seq 1 255) ::: <(seq 1 255)

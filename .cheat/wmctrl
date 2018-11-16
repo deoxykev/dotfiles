@@ -1,0 +1,12 @@
+https://unix.stackexchange.com/questions/384708/split-windows-in-gnome-debian-stretch-version-with-shortcuts 
+# add these to gnome short settings page for easy tiling
+
+# get screen size
+wmctrl -dG
+
+# get list of windows 
+wmctrl -l
+
+# place window
+wmctrl -r :ACTIVE: -e 0,0,0,683,384
+                      g,x,y,w  ,h
